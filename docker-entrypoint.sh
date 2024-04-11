@@ -25,6 +25,9 @@ DEFAULT_ZK_SETTLING_PERIOD=120000
 # AWS_REGION must be exported
 export AWS_REGION
 
+#Copy zoo.cfg file
+cp /opt/apache-zookeeper-3.6.3-bin/conf/zoo_new.cfg /opt/zookeeper/conf/zoo.cfg
+
 cat <<- EOF > /opt/exhibitor/defaults.conf
     auto-manage-instances-fixed-ensemble-size=$ZK_ENSEMBLE_SIZE
     auto-manage-instances-settling-period-ms=$ZK_SETTLING_PERIOD
